@@ -13,12 +13,17 @@ public class App extends Application<Config> {
     }
 
     @Override
-    public void run(Config config, Environment environment) throws Exception {
-
+    public void run(Config config, Environment environment) {
+        System.out.println("Secrets:");
+        config.secrets.forEach((k, v) -> System.out.println(k + " -> " + v));
     }
 
-    public static void main(String[] args) {
-
+    /**
+     * Prepare vault secrets before running with shell command:
+     *     vault write secret/path key1="secretKeyValue" value="secretValue"
+     */
+    public static void main(String[] args) throws Exception {
+        new App().run(args);
     }
 
 }
