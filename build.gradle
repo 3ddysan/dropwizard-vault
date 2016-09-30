@@ -17,7 +17,7 @@ allprojects {
 }
 
 ext {
-    dropwizardVersion = "1.0.0"
+    dropwizardVersion = "1.0.1"
     okhttpVersion = "3.4.1"
     junitVersion = "4.12"
     jacksonVersion = "2.8.3"
