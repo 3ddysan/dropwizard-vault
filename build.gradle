@@ -21,6 +21,7 @@ ext {
     okhttpVersion = "3.4.1"
     junitVersion = "4.12"
     jacksonVersion = "2.8.3"
+    assertjVersion = "3.5.2"
 }
 
 dependencies {
@@ -28,8 +29,7 @@ dependencies {
     compile "com.squareup.okhttp3:okhttp:${okhttpVersion}"
     compile "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
     testCompile "junit:junit:$junitVersion"
-    testCompile 'org.assertj:assertj-core:3.5.2'
-    testCompile "org.mockito:mockito-core:2.1.0-RC.1"
+    testCompile "org.assertj:assertj-core:${assertjVersion}"
 }
 
 task pom << {
