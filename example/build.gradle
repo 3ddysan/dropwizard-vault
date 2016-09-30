@@ -1,0 +1,16 @@
+ext {
+    mainClass = 'edu.thinktank.vault.example.ExampleApp'
+}
+
+dependencies {
+    compile "io.dropwizard:dropwizard-core:${rootProject.dropwizardVersion}"
+    compile rootProject
+}
+
+task run(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = mainClass
+    args 'server', 'example.yml'
+    standardOutput = System.out
+    errorOutput = System.err
+}

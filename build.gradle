@@ -1,0 +1,50 @@
+apply plugin: 'maven'
+
+allprojects {
+    group 'edu.thinktank.vault'
+    version '0.1-SNAPSHOT'
+
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenLocal()
+        jcenter()
+        mavenCentral()
+    }
+}
+
+ext {
+    dropwizardVersion = "1.0.0"
+    okhttpVersion = "3.4.1"
+    junitVersion = "4.12"
+    jacksonVersion = "2.8.3"
+}
+
+dependencies {
+    compile "io.dropwizard:dropwizard-views:${dropwizardVersion}"
+    compile "com.squareup.okhttp3:okhttp:${okhttpVersion}"
+    compile "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+    testCompile "junit:junit:$junitVersion"
+    testCompile 'org.assertj:assertj-core:3.5.2'
+    testCompile "org.mockito:mockito-core:2.1.0-RC.1"
+}
+
+task pom << {
+    pom {
+        project {
+            inceptionYear Calendar.instance[Calendar.YEAR]
+            name 'Dropwizard Thymeleaf Views'
+            url 'https://github.com/3ddysan/dropwizard-views-thymeleaf'
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+        }
+    }.writeTo("pom.xml")
+}
