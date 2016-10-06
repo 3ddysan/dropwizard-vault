@@ -1,6 +1,8 @@
 # dropwizard-vault
 Dropwizard bundle to access [vault](http://vaultproject.io) servers and inject secrets into config.
 
+[![Build Status](https://travis-ci.org/3ddysan/dropwizard-vault.svg?branch=master)](https://travis-ci.org/3ddysan/dropwizard-vault)
+
 # Usage
 This Library implements a substitutor for the [SubstitutingSourceProvider](http://www.dropwizard.io/1.0.2/docs/manual/core.html#environment-variables), which replaces variables (e.g. ${secret/path@fieldname}) inside the dropwizard config yml with the defined vault secret.
 
